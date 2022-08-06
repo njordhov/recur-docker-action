@@ -1,0 +1,19 @@
+;; shadow-cljs configuration
+{:source-paths
+ ["src/dev"
+  "src/main"
+  "src/test"]
+
+ :dependencies
+ [[org.clojure/tools.cli "1.0.206"]]
+
+ :builds
+ {:script 
+  {:target    :node-script
+   :main      action.core/main
+   :output-to "action.js"}
+  :test
+  {:target    :node-test
+   :output-to "out/node-tests.js"
+   :autorun   true}}}
+ 
