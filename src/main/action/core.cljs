@@ -9,5 +9,11 @@
   (println msg)
   (.exit js/process status))
 
+(def cli-options
+  [[nil "--version"]
+   ["-h" "--help"]])
+
 (defn main [& args]
-  (println "Hello"))
+  (let [{:keys [arguments options summary errors] :as opts}
+        (parse-opts args cli-options)]
+    (println "Hello"))
