@@ -10,7 +10,7 @@ RUN node -v
 
 # Copies your code file from your action repository to the filesystem path `/` of the container
 COPY entrypoint.sh /entrypoint.sh
-COPY shadow-cljs.edn /shadow-cljs.edn
+# COPY shadow-cljs.edn /shadow-cljs.edn
 
 RUN npx shadow-cljs release script
 
