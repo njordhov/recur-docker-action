@@ -1,4 +1,4 @@
 (ns action.core)
 
-(defn main []
+(defn main [& args]
   (println "Hello"))
