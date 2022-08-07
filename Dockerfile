@@ -8,6 +8,7 @@ RUN apt-get autoremove -y
 RUN apt-get install -y nodejs
 RUN node -v
 
+COPY package.json /package.json
 RUN npm install
 
 # Copies your code file from your action repository to the filesystem path `/` of the container
