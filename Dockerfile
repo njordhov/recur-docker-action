@@ -8,9 +8,13 @@ RUN apt-get autoremove -y
 RUN apt-get install -y nodejs
 RUN node -v
 
+RUN npm install
+
 # Copies your code file from your action repository to the filesystem path `/` of the container
 COPY entrypoint.sh /entrypoint.sh
 # COPY shadow-cljs.edn /shadow-cljs.edn
+
+RUN npx shadow-cljs compile script
 
 RUN npx shadow-cljs release script
 
